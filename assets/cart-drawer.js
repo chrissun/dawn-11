@@ -13,12 +13,22 @@ class CartDrawer extends HTMLElement {
     cartLink.setAttribute('aria-haspopup', 'dialog');
     cartLink.addEventListener('click', (event) => {
       event.preventDefault();
-      this.open(cartLink);
+      //this.open(cartLink);
+
+      //CCEDIT.  prevent cart button on /cart
+      if (window.location.href.search('cart') < 0){
+        this.open(cartLink)
+      }
+
     });
     cartLink.addEventListener('keydown', (event) => {
       if (event.code.toUpperCase() === 'SPACE') {
         event.preventDefault();
-        this.open(cartLink);
+        //CCEDIT.  prevent cart button on /cart
+        if (window.location.href.search('cart') < 0){
+          this.open(cartLink)
+        }
+        //this.open(cartLink);
       }
     });
   }
