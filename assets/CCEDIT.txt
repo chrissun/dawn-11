@@ -1,0 +1,240 @@
+DAWN 11.
+
+
+
+ALL BELOW NEED TO DO:
+
+
+TODO:
+Product sets
+	global.js:
+
+		variantradios - updateOptions
+		
+
+
+Monogram
+
+
+
+DONE:
+ADDED JQUERY TO THEME
+Added CandC.css
+
+Product slider section
+	product-slider
+	usese flickity css and javascript
+
+MODAL code -
+added to global.js and CandC.css custom modal code.
+
+
+Annoucment bar -
+	adding timer
+
+Subscriber popup
+	Added files and followed instructions here
+	https://github.com/martinclason123/Shopify-Subscriber-Pop-Up
+
+FONT SIZES 
+	base.css - was only 1 break point at 750px.  change to 1023px to have tablet do smaller font.
+
+section borders
+	added to theme and settings_schema
+	.section + .section  in base.css
+
+Landing pages legacy code
+	added code to card-product to exclude price for landingpages on collections.
+
+Multicolumn -
+	added 2/3 width option.
+
+
+Infinite scroll
+	added ajaxinate.min.js to assets
+	updated main-collection-product-grid.liquid
+	added class to li in pagination.liquid
+	added initilization to facets.js renderProductCount()
+	modified ajainate.min.js to bugfix 
+
+Collection topdown
+	added json to main-collection-product-grid
+	udpated card-product to accept topdown flag
+
+hover menu -
+	header.liquid - added script
+
+Product sets
+	added product-sets.liqui
+	added product-sets.css
+	global.js
+		updateVariantInputSets
+		toggleAddButtonSet
+		renderProductInfoSets();
+		VariantSelects - updated onVariantChange
+		FYI, product atc ajax is in product-form.js
+		product-form creates a class for <product-form>.  Everytime a product-form is created, the class is created.
+		NEEDS JQUERY
+
+Footer white goods -
+	added section
+
+Sold in pair
+	sections-main-cart-items -  quantity
+	sections-main-product - quantity selector
+	snippits price.liquid - added "ea"
+	assets - global.js - added isEvenKey function
+	assets - global.js - updaed QuantityInput function
+	cart-drawer.liquid
+
+Breadcrumb
+	breadcrumb.liquid section
+
+Sale Code
+	include checksale.liquid in header.liquid along with javascript to activate sale menu.
+	added final sale to price.liquid
+	added final sale to cart main-cart-items
+	
+
+Discontinued
+	main-product.liquid/product-sets - added hidden tag div in the options block.  update the button to show discontinued if sold out and tag present.
+	global.js - updated the toggleAddButton functions (normal and set)
+
+search
+	predictive-search.js - added &options[unavailable_products]=hide
+	added only prodcuts to header.liquid and main-search.liquid
+
+Product descriptions
+	updated title size in base.css
+	main-product.liquid  collapsible row javascript that pulls content from description
+	had to update en.default.schema.json to include the english schema names
+
+Product block
+	main-product.liquid in header CSS and json.  added custom background colors.
+	updated the z-index on the quantity input selector.  
+		changed in base.css
+		added background color option.
+	
+Footer
+	added bottom menu list to footer.liquid.  IN schema
+	adding email to blocks
+
+Product.liquid swatches for color
+	main-product.liquid
+	added schma checkbox for on/off, images, image scale.
+
+Collections/card-product Swatches
+	added swatches to the colllections page via card-product.
+	took out set: and collection: in main.collection.banner.liquid
+	added hover code to facets.js
+	added the hover code to global.js
+	updated main-collection-product-grid to deal with landingpages
+
+CHECKOUT
+	added notes to checkout.liquid.  
+	added jquery
+
+Header
+	added image to the megamenu.  If the top menu item poitns to a image url.
+	updated megamenu for blank URL links
+	updated log width options
+
+Footer
+	added subtext under mail signup.
+
+Cart
+	updated continuie shopping link in main-cart-items.liquid
+	added sku to cart and cart-drawer
+	updated cart-drawer continue shopping button
+
+Goes with
+	added goes-with.liquid
+	added to en.default.schema.json
+
+Rich-text section
+	rich-text.liquid - added block slider for block width.  Add max-width.
+	section-rich-text.css - change .rich-text__wrapper  to 100%;  rich-text__blocks to 100%;
+
+Multicolumn
+	added link around image in multicolumn.liquid
+	tweeked css file
+	updated json to allow for up to 4 columns on mobile
+	added border for each entry in json and css.
+
+Pixels
+	add pixels-cc.liquid to theme and checkout
+	added data to remove button in main-cart-items for analyzify.  Also to cart-drawer
+	added two analyzify snippits
+	added includes to theme and checkout.liquid for the two analyzify snippets.
+
+Up to top button
+	added div to theme.
+	added javascript to global.js
+	added css to CandC.css
+	added uparrow.svg
+
+Page
+	added legacy-page tempate and section.  
+
+COOKIES
+	added cookie code to global.js
+	added cookie to main-collection-banner.
+
+monogram
+	Added monogram.liquid section.
+	Added monogram product template.  Set monogram product to this template
+	global.js variantselects - add monogram code script and button
+	Added monogram code to main-product.liquid - not done
+	Added owl carousel code.
+
+	Added ajaxify-shop.js asset and in theme
+
+
+	updating product-form.js to go to the monogram page when monogram is selected
+	base.css - turned off a not href no pointer.
+
+	main-cart-items - added add monogram block and turned off links for monograms
+	cart.js - added monogram functions and updated all the code to access the functions.  
+	main-cart-footer - Added monogram 8 days to ship message.
+	Cart-drawer.liquid/cart-drawer.js - added monogram code
+
+
+	updated function multiATC(callback){  in ajaxify-shop - bugfix that needs to be rolled to current theme
+
+	CURRENT:
+	when the sold out button is pushed in sets... we are firing into product-form.js unlike the top sold out button.  
+	just need to return on the sold out state..
+
+
+	NEED TO DO:
+	1.  Monogram "edit" button in cart.
+	5.  Goes via metafields? - need to add the metas to shopify admin
+	6.  metafiedsl for back in stock note?
+	7.  swatches on product page?  prob not.
+	11.  collection swatch.. fix product-reconmendations
+	12. Gift card update?
+	13.  Annoucmenet bar time thing - use app
+	14.  update to new customer accounts in checkout settings?
+	15. back to top button?
+	16.  web push
+	17.  mailchimp and GTM?
+	18.  cart drawer warnings (monogram and final sale)
+	19.  NEED TO UPDATE STOREFRONT ID FOR GRAPHGL in global.js and monogram
+	20.  If error message is throw by product-form.js on ATC, the cart drawer gets all messed up.  This is a problem for atc of more than avaiable.
+
+
+	SWATCH - assign the swatch collection
+	Monogram - assign the monogram
+
+	TAGS:
+		analytics 4 and classic, 
+		mailchimp
+		facebook APP
+
+
+
+	car plan:
+		1.  if item removed or quantity decreased, remove linked monograms
+		2.  add monogram button based on how many existing linked monograms
+		3.  option:  sort.
+		cart.js and main.cart.itms.liquid
